@@ -275,7 +275,8 @@ class Card:
         return count * 4
     
     def ability_dre(self, board_state):
-        pass
+        print('ability_dre() NOT YET IMPLEMENTED')
+        return 0
     
     def ability_shu(self, board_state):
         '''
