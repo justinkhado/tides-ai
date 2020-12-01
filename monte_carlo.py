@@ -2,12 +2,14 @@ class MCTS:
     '''
     Monte Carlo Tree Search
     '''
-    def __init__(self, root):
+    def __init__(self, root, c):
         '''
         Params:
             root: node to start Monte Carlo Tree Search on
+            c: exploration/exploitation parameter
         '''
         self.root = root
+        self.c = c
 
     def search(self, num_simulations):
         '''
@@ -29,7 +31,7 @@ class MCTS:
             if len(current_node.unexplored_actions) != 0:
                 return current_node.expansion()
             else:
-                current_node = current_node.selection()
+                current_node = current_node.selection(self.c)
         
         return current_node
             

@@ -106,19 +106,5 @@ class UCB1Node(MCTSNode):
         '''
         return (x / n) + c * math.sqrt(math.log(N) / n)
 
-class DUCTNode(MCTSNode):
-    '''
-    Decoupled UCT Variant of MCTS node
-    '''
-    def __init__(self, state, parent=None, action=None):
-        super().__init__(state, parent, action)
-        
-        #reward sum and count for each player
-        self.x1 = 0
-        self.n1 = 0
-        self.x2 = 0
-        self.n2 = 0
-
-        self.unexplored_actions = state.actions()
-
+    
         

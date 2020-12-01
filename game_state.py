@@ -4,26 +4,22 @@ import itertools
 Board = namedtuple('Board', 'player_hand, opponent_hand, player_cards, opponent_cards')
 
 class GameState:
+    '''
+    Defines the game state for Tides of Madness
+    '''
     def __init__(self, board):
         self.board = board
 
     def utility(self):
         '''
         Returns:
-            1 if player won
-           -1 if opponent won
-            0 if tie
+            difference in player and opponent scores
         '''
         player_score = self.calc_score(self.board, True)
         opponent_score = self.calc_score(self.board, False)
 
-        if player_score > opponent_score:
-            return 1
-        elif player_score < opponent_score:
-            return -1
-        else:
-            return 0
-        
+        return player_score - opponent_score
+
     def terminal_test(self):
         '''
         Checks if game has ended
