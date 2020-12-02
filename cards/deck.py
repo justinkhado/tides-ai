@@ -1,4 +1,4 @@
-from card import Card
+from cards.card import Card
 
 ########################################################################################################
 ## Cards ##
@@ -30,4 +30,4 @@ shu = Card(id='SHU', name='Shub Niggurath', suit='None', madness=False)
 
 ########################################################################################################
 
-deck = (nya, yog, aza, rly, inn, mou, una, pna, nec, dag, cth, has, dee, eld, gre, mis, dre, shu)
+DECK = (nya, yog, aza, rly, inn, mou, una, pna, nec, dag, cth, has, dee, eld, gre, mis, dre, shu)

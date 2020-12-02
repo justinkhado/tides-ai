@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 import math
 import random
-import game_state
 
 class MCTSNode(ABC):
     '''
@@ -22,7 +21,7 @@ class MCTSNode(ABC):
         self.children = []
 
     @abstractmethod
-    def selection(self, c=math.sqrt(2)):
+    def selection(self, c):
         '''
         Params:
             c: exploration/exploitation constant; c = 0 => exploitation only
@@ -63,7 +62,7 @@ class UCB1Node(MCTSNode):
         self.n = 0
         self.unexplored_actions = state.actions()
 
-    def selection(self, c=math.sqrt(2)):
+    def selection(self, c):
         possible_choices = []
         for child in self.children:
             possible_choices.append(self.ucb1(child.x, child.n, self.n, c))

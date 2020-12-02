@@ -1,10 +1,10 @@
-from game_state import GameState, Board
-from monte_carlo import MCTS
-from mcts_node import UCB1Node
+from montecarlo.game_state import GameState, Board
+from montecarlo.mcts import MCTS
+from montecarlo.mcts_node import UCB1Node
+import cards.deck
 import functools
 import random
 import math
-import deck
 
 class TidesOfMadness:
     def __init__(self):
@@ -124,7 +124,7 @@ class TidesOfMadness:
                                opponent_cards=opponent_cards))
 
     def reset_game(self):
-        self.deck = list(deck.deck)
+        self.deck = list(cards.deck.DECK)
         random.shuffle(self.deck)
 
         player_hand = []
@@ -196,10 +196,9 @@ class TidesOfMadness:
         return greedy_move
 
     def monte_carlo_player(self, state, player, num_simulations=100, c=math.sqrt(2)):
-        # if player is True, keep state as normal
-        # if player is False, swap player and opponent cards
-        # NOTE: For some unknown reason, backpropagating -utility as opponent 
-        #       adds bias to the opponent. Swapping cards shows no bias.
+        '''
+        if opponent, swap player and opponent cards
+        '''
         if player:
             root = UCB1Node(state)
         else:
@@ -237,9 +236,10 @@ if __name__ == '__main__':
     mc_player_c08 = functools.partial(game.monte_carlo_player, c=0.8)
     mc_player_c12 = functools.partial(game.monte_carlo_player, c=1.2)
     mc_player_c16 = functools.partial(game.monte_carlo_player, c=1.6)
+    mc_player_c20 = functools.partial(game.monte_carlo_player, c=2.0)
     
     for i in range(1000):
         print('Game', i+1)
         game.reset_game()
-        stats[game.play_game(mc_player_5000, mc_player_100, display=False)] += 1
+        stats[game.play_game(mc_player_100, game.greedy_player, display=False)] += 1
     print(stats)
