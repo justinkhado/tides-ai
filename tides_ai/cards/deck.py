@@ -8,7 +8,7 @@ nya = Card(id='NYA', name='Nyarlathotep', suit='Outer Gods', madness=False)
 yog = Card(id='YOG', name='Yog Sothoth', suit='Outer Gods', madness=True)
 aza = Card(id='AZA', name='Azathoth', suit='Outer Gods', madness=False)
 
-rly = Card(id='RLY', name='R\'lyeh', suit='Locations', madness=True)
+rly = Card(id='RLY', name='Rlyeh', suit='Locations', madness=True)
 inn = Card(id='INN', name='Innsmouth', suit='Locations', madness=False)
 mou = Card(id='MOU', name='Mountains of Madness', suit='Locations', madness=False)
 
