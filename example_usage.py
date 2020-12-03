@@ -3,7 +3,7 @@ import functools
 
 if __name__ == '__main__':
     game = TidesOfMadness()
-    num_games = 1
+    num_games = 100
     stats = {1: 0, -1: 0, 0: 0}
 
     # monte carlo players with different number of simulations, n, and same exploration parameter (c=sqrt(2))
@@ -23,5 +23,5 @@ if __name__ == '__main__':
     for i in range(num_games):
         print('Game', i+1)
         game.reset_game()
-        stats[game.play_game(game.query_player, game.monte_carlo_player, display=True)] += 1
+        stats[game.play_game(game.random_player, game.monte_carlo_player, display=False)] += 1
     print(stats)

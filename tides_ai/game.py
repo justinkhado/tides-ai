@@ -1,7 +1,7 @@
-from montecarlo.game_state import GameState, Board
-from montecarlo.mcts import MCTS
-from montecarlo.mcts_node import UCB1Node
-import cards.deck
+from .montecarlo.game_state import GameState, Board
+from .montecarlo.mcts import MCTS
+from .montecarlo.mcts_node import UCB1Node
+from .cards import deck
 import random
 import math
 
@@ -127,7 +127,7 @@ class TidesOfMadness:
                                opponent_cards=opponent_cards))
 
     def reset_game(self):
-        self.deck = list(cards.deck.DECK)
+        self.deck = list(deck.DECK)
         random.shuffle(self.deck)
 
         player_hand = []
@@ -152,7 +152,7 @@ class TidesOfMadness:
         print()
 
         move = None
-        for card in cards.deck.DECK:
+        for card in deck.DECK:
             if card.id == move_id:
                 move = card
         
