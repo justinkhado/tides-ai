@@ -32,8 +32,10 @@ tom_game.play_game(mc_player_n1000c1, game.random_player)
 Code Design:
 - make GameState class abstract to allow for different implementations
 - refactor TidesOfMadness
+
 Implementation:
 - reduce number of modifications necessary
 - add Decoupled UCT
+
 Code Usability:
 - add setup.py file
