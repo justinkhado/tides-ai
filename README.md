@@ -35,6 +35,8 @@ Code Design:
 
 Implementation:
 - reduce number of modifications necessary
+  - implement *Madness*
+  - make the rounds dependent on previous rounds when using mcts
 - add Decoupled UCT
 
 Code Usability:

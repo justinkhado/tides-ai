@@ -15,14 +15,14 @@ class TidesOfMadness:
         self.display_cards(state.board.player_hand)
         print('Played: ', end='')
         self.display_cards(state.board.player_cards)
-        print('Madness:', state.calc_madness(state.board.player_cards))
+        #print('Madness:', state.calc_madness(state.board.player_cards))
 
         print('--OPPONENT--')
         print('Hand: ', end='')
         self.display_cards(state.board.opponent_hand)
         print('Played: ', end='')
         self.display_cards(state.board.opponent_cards)
-        print('Madness:', state.calc_madness(state.board.opponent_cards))
+        #print('Madness:', state.calc_madness(state.board.opponent_cards))
 
     def play_game(self, player, opponent, display=True):
         def game_loop(state):
@@ -43,9 +43,9 @@ class TidesOfMadness:
                     if display:
                         print('\n--Round Ended--')
                         print('Player')
-                        print('Score:', state.calc_score(state.board, player=True), 'Madness:', state.calc_madness(state.board.player_cards))
+                        print('Score:', state.calc_score(state.board, player=True))#, 'Madness:', state.calc_madness(state.board.player_cards))
                         print('Opponent')
-                        print('Score:', state.calc_score(state.board, player=False), 'Madness:', state.calc_madness(state.board.opponent_cards))
+                        print('Score:', state.calc_score(state.board, player=False))#, 'Madness:', state.calc_madness(state.board.opponent_cards))
                     return state
 
         # Round 1
