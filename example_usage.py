@@ -1,4 +1,4 @@
-from tides_ai.game import TidesOfMadness
+from tides.game import TidesOfMadness
 import functools
 
 if __name__ == '__main__':

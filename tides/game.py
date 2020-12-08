@@ -1,4 +1,4 @@
-from .montecarlo.game_state import GameState, Board
+from .game_state import GameState, Board
 from .montecarlo.mcts import MCTS
 from .montecarlo.mcts_node import UCB1Node
 from .cards import deck
