@@ -173,7 +173,6 @@ class TidesOfMadness:
         '''
         Makes the move the gives the most points for the current turn.
         If first turn of round, a random move is chosen.
-        Won't make a move that leads to 'Madness' loss condition.
         '''
         if state.board.player_cards == 0:
             return self.random_player(state, player)

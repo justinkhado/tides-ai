@@ -6,6 +6,12 @@ if __name__ == '__main__':
     num_games = 1
     stats = {1: 0, -1: 0, 0: 0}
 
+    # players included with TidesOfMadness class:
+    #   query_player
+    #   random_player
+    #   greedy_player
+    #   monte_carlo_player
+
     # monte carlo players with different number of simulations, n, and same exploration parameter (c=sqrt(2))
     mc_player_1 = functools.partial(game.monte_carlo_player, num_simulations=1)
     mc_player_10 = functools.partial(game.monte_carlo_player, num_simulations=10)
